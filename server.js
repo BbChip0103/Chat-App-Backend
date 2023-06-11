@@ -63,7 +63,7 @@ io.on("connection", async (socket) => {
 
   if (user_id != null && Boolean(user_id)) {
     try {
-      User.findByIdAndUpdate(user_id, {
+      await User.findByIdAndUpdate(user_id, {
         socket_id: socket.id,
         status: "Online",
       });
